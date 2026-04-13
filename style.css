@@ -60,3 +60,38 @@ body {
     object-fit: cover;
     object-position: center;
 }
+
+.product-card__badge {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: var(--color-muted);
+    color: white;
+    padding: 2px 6px;
+    border-radius: 6px;
+    font-family: var(--font-secondary);
+    font-weight: var(--weight-extralight);
+    font-size: 0.75rem;
+}
+
+.product-card__info {
+    display: flex;
+    flex-direction: column;
+    margin-top: 8%;
+}
+
+.product-card__title,
+.product-card__price {
+    font-family: var(--font-secondary);
+    font-weight: var(--weight-medium);
+    font-size: 1.5rem;
+    color: var(--color-text);
+    margin: 3% 0;
+}
+
+.product-card__distance {
+    font-family: var(--font-primary);
+    font-weight: var(--weight-light);
+    color: var(--color-muted);
+    margin-top: 4%;
+}
