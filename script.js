@@ -209,5 +209,21 @@ function createNotificationBell() {
     return wrapper;
 }
 
-const container = document.querySelector(".container");
-container.appendChild(createListingSection("Near me", products));
+// assemble the app by creating components and rendering them to the DOM
+
+function renderApp() {
+    const container = document.querySelector(".container");
+    if (!container) return;
+
+    const headerArea = document.createElement("div");
+    headerArea.className = "header-area";
+    headerArea.appendChild(createSearchBar());
+    headerArea.appendChild(createNotificationBell());
+
+    const listSection = createListingSection("Near me", products);
+
+    container.appendChild(headerArea);
+    container.appendChild(listSection);
+}
+
+renderApp();
