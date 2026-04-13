@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Project Code Review</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+
+  <body>
+    <div class="app">
+      <header class="app__header">
+        <h1 class="app__title">Product listing</h1>
+      </header>
+
+      <main class="app__main">
+        <section class="search-panel">
+          <div class="search-panel__row">
+            <form class="search-panel__form">
+              <input
+                class="search-panel__input"
+                type="text"
+                placeholder="Search"
+              />
+            </form>
+            <button class="search-panel__button" type="button">Alerts</button>
+          </div>
+
+          <nav class="category-nav">
+            <button
+              class="category-nav__button category-nav__button--active"
+              type="button"
+            >
+              Bedroom
+            </button>
+            <button class="category-nav__button" type="button">Dining</button>
+            <button class="category-nav__button" type="button">Lighting</button>
+            <button class="category-nav__button" type="button">Plants</button>
+          </nav>
+        </section>
+
+        <section class="products">
+          <div class="products__header">
+            <h2 class="products__title">Near me</h2>
+            <button class="search-panel__button" type="button">Filter</button>
+          </div>
+
+          <div class="products__grid"></div>
+        </section>
+      </main>
+
+      <nav class="nav">
+        <button class="nav__button nav__button--active" type="button">
+          Home
+        </button>
+        <button class="nav__button" type="button">Explore</button>
+        <button class="nav__button" type="button">Post</button>
+        <button class="nav__button" type="button">Trades</button>
+        <button class="nav__button" type="button">Profile</button>
+      </nav>
+    </div>
+  </body>
+</html>
