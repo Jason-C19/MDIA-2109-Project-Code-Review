@@ -1,0 +1,113 @@
+:root {
+    --font-primary: "lotus-eden", sans-serif;
+    --font-secondary: "ofelia-display", sans-serif;
+
+    --weight-light: 300;
+    --weight-medium: 500;
+    --weight-bold: 600;
+    --weight-extralight: 200;
+
+    --color-text: #0f0a0a;
+    --color-muted: #a7a7a7;
+
+    --color-primary: #af6e4d;
+    --color-primary-hover: #c18c71;
+    --color-primary-active: #88553c;
+
+    --color-bg: #f6f6f6;
+    --color-bg-alt: #eeeeee;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary);
+    font-weight: var(--weight-light);
+    font-size: 1rem;
+}
+
+.section {
+    margin-bottom: 10%;
+}
+
+.section__title {
+    font-family: var(--font-primary);
+    font-weight: var(--weight-bold);
+    font-size: 2rem;
+    margin: 3%;
+}
+
+.product-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    margin: 3%;
+}
+
+.product-card {
+    background: var(--color-bg);
+    border-radius: 12px;
+    padding: 0.75rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card:hover {
+    background: var(--color-bg-alt);
+    cursor: pointer;
+}
+
+.product-card__image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 280px;
+    border: 1px solid var(--color-muted);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.product-card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.product-card__badge {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: var(--color-muted);
+    color: white;
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-family: var(--font-secondary);
+    font-weight: var(--weight-extralight);
+    font-size: 0.75rem;
+}
+
+.product-card__info {
+    display: flex;
+    flex-direction: column;
+    margin-top: 8%;
+}
+
+.product-card__title,
+.product-card__price {
+    font-family: var(--font-secondary);
+    font-weight: var(--weight-medium);
+    font-size: 1.5rem;
+    color: var(--color-text);
+    margin: 3% 0;
+}
+
+.product-card__distance {
+    font-family: var(--font-primary);
+    font-weight: var(--weight-light);
+    color: var(--color-muted);
+    margin-top: 4%;
+}
