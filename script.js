@@ -57,10 +57,10 @@ const products = [
     },
 ];
 
+// refactor: add GSAP click animation to product cards after creating the card element
 function createProductCard(product) {
     const card = document.createElement("div");
     card.className = "product-card";
-
     card.innerHTML = `
         <div class="product-card__image-wrapper">
             <img src="${product.image}" class="product-card__image" alt="${product.title}">
@@ -73,6 +73,23 @@ function createProductCard(product) {
             <p class="product-card__distance">${product.distance}</p>
         </div>
     `;
+
+    const pressAction = () => {
+        gsap.to(card, { scale: 0.95, duration: 0.1, ease: "power1.out" });
+    };
+
+    const releaseAction = () => {
+        gsap.to(card, { scale: 1, duration: 0.4, ease: "back.out(1.7)" });
+    };
+
+    card.addEventListener("mousedown", pressAction);
+    card.addEventListener("touchstart", pressAction, { passive: true });
+
+    card.addEventListener("mouseup", releaseAction);
+    card.addEventListener("touchend", releaseAction);
+
+    card.addEventListener("mouseleave", releaseAction);
+    card.addEventListener("touchcancel", releaseAction);
 
     return card;
 }
