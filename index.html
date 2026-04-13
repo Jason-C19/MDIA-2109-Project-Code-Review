@@ -3,164 +3,45 @@
   <head>
     <title>Project Code Review</title>
     <link rel="stylesheet" href="styles.css" />
-    <script src="script.js"></script>
+    <link href="https://use.typekit.net/emy2djx.css" rel="stylesheet" />
+    <script src="script.js" defer></script>
   </head>
 
   <body>
-    <div class="app">
-      <header class="app__header">
-        <h1 class="app__title">Product listing</h1>
-      </header>
+     <div class="app">
 
-      <main class="app__main">
-        <section class="search-panel">
-          <div class="search-panel__row">
-            <form class="search-panel__form">
-              <input
-                class="search-panel__input"
-                type="text"
-                placeholder="Search"
-              />
-            </form>
-            <button class="search-panel__button" type="button">Alerts</button>
-          </div>
+    <header class="app__header">
+      <h1 class="app__title">Product listing</h1>
+    </header>
 
-          <nav class="category-nav">
-            <button
-              class="category-nav__button category-nav__button--active"
-              type="button"
-            >
-              Bedroom
-            </button>
-            <button class="category-nav__button" type="button">Dining</button>
-            <button class="category-nav__button" type="button">Lighting</button>
-            <button class="category-nav__button" type="button">Plants</button>
-          </nav>
-        </section>
+    <main class="app__main">
+      <section class="search-panel">
+        <div class="search-panel__row">
+          <form class="search-panel__form">
+            <input class="search-panel__input" type="text" placeholder="Search">
+          </form>
+          <button class="search-panel__button" type="button">Alerts</button>
+        </div>
 
-        <section class="products">
-          <div class="products__header">
-            <h2 class="products__title">Near me</h2>
-            <button class="search-panel__button" type="button">Filter</button>
-          </div>
+        <nav class="category-nav">
+          <button class="category-nav__button category-nav__button--active" type="button">Bedroom</button>
+          <button class="category-nav__button" type="button">Dining</button>
+          <button class="category-nav__button" type="button">Lighting</button>
+          <button class="category-nav__button" type="button">Plants</button>
+        </nav>
+      </section>
 
-          <div class="products__grid"></div>
-        </section>
-      </main>
+      <section class="products-section">
+        <h2 class="products-section__title">Near me</h2>
+      </section>
+    </main>
 
-      <nav class="nav">
-        <button class="nav__button nav__button--active" type="button">
-          Home
-        </button>
-        <button class="nav__button" type="button">Explore</button>
-        <button class="nav__button" type="button">Post</button>
-        <button class="nav__button" type="button">Trades</button>
-        <button class="nav__button" type="button">Profile</button>
-      </nav>
-    </div>
-
-    <div class="products__grid">
-      <div class="product-card">
-        <div class="product-card__image-wrapper">
-          <img
-            class="product-card__image"
-            src="https://via.placeholder.com/200x140"
-            alt="Product image"
-          />
-        </div>
-        <div class="product-card__info">
-          <div class="product-card__top">
-            <h3 class="product-card__title">Little Oak</h3>
-            <p class="product-card__price">$40</p>
-          </div>
-          <p class="product-card__distance">2.8km away</p>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <div class="product-card__image-wrapper">
-          <img
-            class="product-card__image"
-            src="https://via.placeholder.com/200x140"
-            alt="Product image"
-          />
-        </div>
-        <div class="product-card__info">
-          <div class="product-card__top">
-            <h3 class="product-card__title">ZZ Plant</h3>
-            <p class="product-card__price">$5</p>
-          </div>
-          <p class="product-card__distance">1.2km away</p>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <div class="product-card__image-wrapper">
-          <img
-            class="product-card__image"
-            src="https://via.placeholder.com/200x140"
-            alt="Product image"
-          />
-        </div>
-        <div class="product-card__info">
-          <div class="product-card__top">
-            <h3 class="product-card__title">Coastline Sofa</h3>
-            <p class="product-card__price">$70</p>
-          </div>
-          <p class="product-card__distance">2km away</p>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <div class="product-card__image-wrapper">
-          <img
-            class="product-card__image"
-            src="https://via.placeholder.com/200x140"
-            alt="Product image"
-          />
-        </div>
-        <div class="product-card__info">
-          <div class="product-card__top">
-            <h3 class="product-card__title">Timber Table</h3>
-            <p class="product-card__price">$35</p>
-          </div>
-          <p class="product-card__distance">5km away</p>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <div class="product-card__image-wrapper">
-          <img
-            class="product-card__image"
-            src="https://via.placeholder.com/200x140"
-            alt="Product image"
-          />
-        </div>
-        <div class="product-card__info">
-          <div class="product-card__top">
-            <h3 class="product-card__title">Oak Desk</h3>
-            <p class="product-card__price">$40</p>
-          </div>
-          <p class="product-card__distance">5km away</p>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <div class="product-card__image-wrapper">
-          <img
-            class="product-card__image"
-            src="https://via.placeholder.com/200x140"
-            alt="Product image"
-          />
-        </div>
-        <div class="product-card__info">
-          <div class="product-card__top">
-            <h3 class="product-card__title">Bookshelf</h3>
-            <p class="product-card__price">$38</p>
-          </div>
-          <p class="product-card__distance">5km away</p>
-        </div>
-      </div>
-    </div>
+    <nav class="nav">
+      <button class="nav__button nav__button--active" type="button">Home</button>
+      <button class="nav__button" type="button">Explore</button>
+      <button class="nav__button" type="button">Post</button>
+      <button class="nav__button" type="button">Trades</button>
+      <button class="nav__button" type="button">Profile</button>
+    </nav>
   </body>
 </html>
