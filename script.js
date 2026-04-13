@@ -77,8 +77,12 @@ function createProductCard(product) {
     return card;
 }
 
-function createListingSection(productList) {
+function createListingSection(titleText, productList) {
     const section = document.createElement("section");
+    
+    const title = document.createElement("h2");
+    title.className = "section__title";
+    title.textContent = titleText;
 
     const grid = document.createElement("div");
     grid.className = "product-grid";
@@ -87,10 +91,11 @@ function createListingSection(productList) {
         grid.appendChild(createProductCard(product));
     });
 
+    section.appendChild(title);
     section.appendChild(grid);
 
     return section;
 }
 
 const container = document.querySelector(".container");
-container.appendChild(createListingSection(products));
+container.appendChild(createListingSection("Near me", products));
