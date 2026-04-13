@@ -64,6 +64,7 @@ function createProductCard(product) {
     card.innerHTML = `
         <div class="product-card__image-wrapper">
             <img src="${product.image}" class="product-card__image" alt="${product.title}">
+            <div class="product-card__badge">${product.recent}</div>
         </div>
 
         <div class="product-card__info">
