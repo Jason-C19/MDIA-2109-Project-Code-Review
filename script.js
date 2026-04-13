@@ -79,7 +79,8 @@ function createProductCard(product) {
 
 function createListingSection(titleText, productList) {
     const section = document.createElement("section");
-    
+    section.className = "section";
+
     const title = document.createElement("h2");
     title.className = "section__title";
     title.textContent = titleText;
