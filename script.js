@@ -59,10 +59,17 @@ const products = [
 
 function createProductCard(product) {
     const card = document.createElement("div");
+    card.className = "product-card";
 
     card.innerHTML = `
         <div class="product-card__image-wrapper">
             <img src="${product.image}" class="product-card__image" alt="${product.title}">
+        </div>
+
+        <div class="product-card__info">
+            <h3 class="product-card__title">${product.title}</h3>
+            <p class="product-card__price">$${product.price}</p>
+            <p class="product-card__distance">${product.distance}</p>
         </div>
     `;
 
@@ -83,7 +90,6 @@ function createListingSection(productList) {
 
     return section;
 }
-
 
 const container = document.querySelector(".container");
 container.appendChild(createListingSection(products));
