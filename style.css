@@ -120,3 +120,29 @@ body {
     margin: 5% auto 10% auto;
     max-width: 800px;
 }
+
+.search-wrapper {
+    position: relative;
+    width: 600px;
+}
+
+.search-input {
+    width: 100%;
+    padding: 18px 25px;
+    border-radius: 35px;
+    border: none;
+    background-color: #f0f0f0;
+    font-family: var(--font-primary);
+    font-size: 1.1rem;
+    outline: none;
+    color: #555;
+}
+
+.search-placeholder {
+    position: absolute;
+    left: 25px;
+    top: 18px;
+    color: var(--color-muted);
+    font-family: var(--font-primary);
+    font-size: 1.1rem;
+}
