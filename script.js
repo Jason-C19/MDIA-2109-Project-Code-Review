@@ -56,3 +56,34 @@ const products = [
         image: "images/natural-beech-chair.png",
     },
 ];
+
+function createProductCard(product) {
+    const card = document.createElement("div");
+
+    card.innerHTML = `
+        <div class="product-card__image-wrapper">
+            <img src="${product.image}" class="product-card__image" alt="${product.title}">
+        </div>
+    `;
+
+    return card;
+}
+
+function createListingSection(productList) {
+    const section = document.createElement("section");
+
+    const grid = document.createElement("div");
+    grid.className = "product-grid";
+
+    productList.forEach((product) => {
+        grid.appendChild(createProductCard(product));
+    });
+
+    section.appendChild(grid);
+
+    return section;
+}
+
+
+const container = document.querySelector(".container");
+container.appendChild(createListingSection(products));
