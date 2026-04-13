@@ -2,9 +2,43 @@
 <html>
   <head>
     <title>Project Code Review</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://use.typekit.net/emy2djx.css" rel="stylesheet" />
+    <script src="script.js" defer></script>
   </head>
 
-  <body></body>
+  <body>
+    <div class="app">
+      <header class="app__header">
+        <h1 class="app__title">Product listing</h1>
+      </header>
+
+      <main class="app__main">
+        <section class="search-panel">
+          <div class="search-panel__row">
+            <form class="search-panel__form">
+              <input
+                class="search-panel__input"
+                type="text"
+                placeholder="Search"
+              />
+            </form>
+            <button class="search-panel__button" type="button">Alerts</button>
+          </div>
+
+          <nav class="category-nav">
+            <button
+              class="category-nav__button category-nav__button--active"
+              type="button"
+            >
+              Bedroom
+            </button>
+            <button class="category-nav__button" type="button">Dining</button>
+            <button class="category-nav__button" type="button">Lighting</button>
+            <button class="category-nav__button" type="button">Plants</button>
+          </nav>
+        </section>
+      </main>
+    </div>
+  </body>
 </html>
