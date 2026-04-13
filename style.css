@@ -1,0 +1,31 @@
+:root {
+    --font-primary: "lotus-eden", sans-serif;
+    --font-secondary: "ofelia-display", sans-serif;
+
+    --weight-light: 300;
+    --weight-medium: 500;
+    --weight-bold: 600;
+    --weight-extralight: 200;
+
+    --color-text: #0f0a0a;
+    --color-muted: #a7a7a7;
+
+    --color-primary: #af6e4d;
+    --color-primary-hover: #c18c71;
+    --color-primary-active: #88553c;
+
+    --color-bg: #f6f6f6;
+    --color-bg-alt: #eeeeee;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary);
+    font-weight: var(--weight-light);
+    font-size: 1rem;
+}
