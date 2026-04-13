@@ -115,5 +115,69 @@ function createListingSection(titleText, productList) {
     return section;
 }
 
+// create search bar component with GSAP animations
+
+function createSearchBar() {
+    const wrapper = document.createElement("div");
+    wrapper.className = "search-wrapper";
+
+    const input = document.createElement("input");
+    input.type = "text";
+    input.className = "search-input";
+
+    const placeholder = document.createElement("span");
+    placeholder.className = "search-placeholder";
+    placeholder.innerText = "Search";
+
+    wrapper.appendChild(input);
+    wrapper.appendChild(placeholder);
+
+    input.addEventListener("focus", () => {
+        if (input.value === "") {
+            gsap.to(placeholder, {
+                y: -15,
+                opacity: 0,
+                duration: 0.2,
+                onComplete: () => {
+                    placeholder.innerText = "What are you looking for?";
+                    gsap.fromTo(
+                        placeholder,
+                        { y: 15, opacity: 0 },
+                        { y: 0, opacity: 1, duration: 0.3 },
+                    );
+                },
+            });
+        }
+    });
+
+    input.addEventListener("input", () => {
+        if (input.value.length > 0) {
+            gsap.to(placeholder, { opacity: 0, duration: 0.1 });
+        } else {
+            gsap.to(placeholder, { opacity: 1, duration: 0.1 });
+        }
+    });
+
+    input.addEventListener("blur", () => {
+        if (input.value === "") {
+            gsap.to(placeholder, {
+                y: -15,
+                opacity: 0,
+                duration: 0.2,
+                onComplete: () => {
+                    placeholder.innerText = "Search";
+                    gsap.fromTo(
+                        placeholder,
+                        { y: 15, opacity: 0 },
+                        { y: 0, opacity: 1, duration: 0.3 },
+                    );
+                },
+            });
+        }
+    });
+
+    return wrapper;
+}
+
 const container = document.querySelector(".container");
 container.appendChild(createListingSection("Near me", products));
