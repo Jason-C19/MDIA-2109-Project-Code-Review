@@ -7,6 +7,7 @@ for (let i = 0; i < navButtons.length; i++) {
     for (let j = 0; j < navButtons.length; j++) {
       navButtons[j].classList.remove("nav__button--active");
     }
+
     this.classList.add("nav__button--active");
   });
 }
@@ -16,6 +17,7 @@ for (let i = 0; i < categoryButtons.length; i++) {
     for (let j = 0; j < categoryButtons.length; j++) {
       categoryButtons[j].classList.remove("category-nav__button--active");
     }
+
     this.classList.add("category-nav__button--active");
   });
 }
