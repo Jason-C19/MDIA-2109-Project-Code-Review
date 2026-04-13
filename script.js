@@ -179,5 +179,35 @@ function createSearchBar() {
     return wrapper;
 }
 
+// create notification bell component with GSAP animation
+
+function createNotificationBell() {
+    const wrapper = document.createElement("div");
+    wrapper.className = "bell-wrapper";
+
+    const icon = document.createElement("div");
+    icon.className = "bell-icon";
+    icon.innerText = "🔔";
+
+    wrapper.appendChild(icon);
+
+    wrapper.addEventListener("click", () => {
+        gsap.set(icon, { transformOrigin: "top center" });
+
+        gsap.to(icon, {
+            rotation: 10,
+            yoyo: true,
+            repeat: 3,
+            duration: 0.1,
+            ease: "power1.inOut",
+            onComplete: () => {
+                gsap.to(icon, { rotation: 0, duration: 0.1 });
+            },
+        });
+    });
+
+    return wrapper;
+}
+
 const container = document.querySelector(".container");
 container.appendChild(createListingSection("Near me", products));
