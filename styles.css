@@ -125,3 +125,66 @@ body {
   padding: 8px 10px;
   border-radius: 8px;
 }
+
+.category-nav__button--active {
+  background: var(--active-bg);
+  color: var(--active-text);
+}
+
+.nav__button--active {
+  color: var(--active-text);
+  background: var(--active-bg);
+}
+
+@media (min-width: 700px) {
+  body {
+    padding: 30px;
+  }
+
+  .app {
+    max-width: 900px;
+    min-height: 550px;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .app__header {
+    padding: 24px 24px 10px;
+  }
+
+  .app__title {
+    font-size: 28px;
+  }
+
+  .app__main {
+    padding: 20px 24px;
+  }
+
+  .search-panel {
+    padding: 20px;
+  }
+
+  .search-panel__row {
+    max-width: 700px;
+  }
+
+  .category-nav {
+    margin-top: 16px;
+  }
+
+  .products-section__title {
+    font-size: 32px;
+    margin-top: 22px;
+  }
+
+  .nav {
+    justify-content: center;
+    gap: 20px;
+    padding: 16px 24px;
+  }
+
+  .nav__button {
+    font-size: 15px;
+    padding: 10px 16px;
+  }
+}
