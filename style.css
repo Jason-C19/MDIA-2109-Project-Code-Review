@@ -83,8 +83,8 @@ body {
     right: 8px;
     background: var(--color-muted);
     color: white;
-    padding: 2px 6px;
-    border-radius: 6px;
+    padding: 4px 10px;
+    border-radius: 15px;
     font-family: var(--font-secondary);
     font-weight: var(--weight-extralight);
     font-size: 0.75rem;
