@@ -209,8 +209,7 @@ function createNotificationBell() {
     return wrapper;
 }
 
-// assemble the app by creating components and rendering them to the DOM
-
+// refactor: main render function to assemble the app components and render to the DOM
 function renderApp() {
     const container = document.querySelector(".container");
     if (!container) return;
