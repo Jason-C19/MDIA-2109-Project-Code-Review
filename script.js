@@ -22,3 +22,19 @@ categoryButtons.forEach(function (button) {
     setActiveButton(categoryButtons, button, "category-nav__button--active");
   });
 });
+
+const productSections = document.querySelectorAll(".products-section__content");
+
+categoryButtons.forEach(function (button) {
+  button.addEventListener("click", function () {
+    const category = button.dataset.category;
+
+    productSections.forEach(function (section) {
+      section.classList.add("is-hidden");
+
+      if (section.classList.contains("products--" + category)) {
+        section.classList.remove("is-hidden");
+      }
+    });
+  });
+});
