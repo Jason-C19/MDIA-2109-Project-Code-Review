@@ -87,10 +87,12 @@ body {
   background: none;
   color: var(--text-light);
   font-family: var(--font);
-  font-size: 14px;
+  font-size: 0.875rem;
   cursor: pointer;
-  padding: 8px 10px;
-  border-radius: 8px;
+  padding: 0.5rem 0.625rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .category-nav__button--active {
