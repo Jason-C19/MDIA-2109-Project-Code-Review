@@ -52,15 +52,15 @@ body {
 
 .category-nav {
   display: flex;
-  gap: 8px;
-  margin-top: 12px;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
   flex-wrap: wrap;
 }
 
 .category-nav__button {
-  padding: 8px 12px;
+  padding: 0.5rem 0.75rem;
   border: none;
-  border-radius: 16px;
+  border-radius: 1rem;
   background: var(--button);
   cursor: pointer;
   font-family: var(--font);
@@ -127,14 +127,6 @@ body {
 
   .app__main {
     padding: 20px 24px;
-  }
-
-  .search-panel {
-    padding: 20px;
-  }
-
-  .search-panel__row {
-    max-width: 700px;
   }
 
   .category-nav {
