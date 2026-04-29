@@ -50,40 +50,6 @@ body {
   padding: 12px;
 }
 
-.search-panel {
-  background: var(--light);
-  padding: 12px;
-  border-radius: 10px;
-}
-
-.search-panel__row {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-}
-
-.search-panel__form {
-  flex: 1;
-}
-
-.search-panel__input {
-  width: 100%;
-  padding: 10px 14px;
-  border: none;
-  border-radius: 20px;
-  background: var(--input);
-  font-family: var(--font);
-}
-
-.search-panel__button {
-  padding: 10px 14px;
-  border: none;
-  border-radius: 20px;
-  background: var(--input);
-  cursor: pointer;
-  font-family: var(--font);
-}
-
 .category-nav {
   display: flex;
   gap: 8px;
