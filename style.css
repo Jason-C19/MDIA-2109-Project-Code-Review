@@ -8,7 +8,7 @@
     --weight-extralight: 200;
 
     --color-text: #0f0a0a;
-    --color-muted: #a7a7a7;
+    --color-muted: #565656;
 
     --color-primary: #af6e4d;
     --color-primary-hover: #c18c71;
@@ -16,6 +16,10 @@
 
     --color-bg: #f6f6f6;
     --color-bg-alt: #eeeeee;
+
+    --color-badge-time: #72a4bf;
+
+    --color-border: #7c4e36;
 }
 
 *,
@@ -142,9 +146,10 @@ body {
     position: absolute;
     left: 25px;
     top: 18px;
-    color: var(--color-muted);
+    color: #555;
     font-family: var(--font-primary);
     font-size: 1.1rem;
+    pointer-events: none;
 }
 
 .bell-wrapper {
@@ -153,17 +158,21 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f0f0f0;
+    background-color: var(--color-badge-time);
     border-radius: 50%;
     cursor: pointer;
-    border: 1px solid #ddd;
+    border: none;
     flex-shrink: 0;
 }
 
 .bell-icon {
     font-size: 1.1rem;
-    color: #888;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.search-input:focus,
+.bell-wrapper:focus {
+    outline: 2px solid var(--color-primary);
 }
