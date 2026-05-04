@@ -115,24 +115,22 @@ function createListingSection(titleText, productList) {
     return section;
 }
 
-// refactor: target search input and bell icon directly in HTML
+// refactor: group GSAP animation settings for search bar into reusable objects to reduce redundancy
 function initSearchBar() {
     const input = document.querySelector(".search-input");
     const placeholder = document.querySelector(".search-placeholder");
 
+    const hideSettings = { y: -15, opacity: 0, duration: 0.2 };
+    const showFromSettings = { y: 15, opacity: 0 };
+    const showToSettings = { y: 0, opacity: 1, duration: 0.3 };
+
     input.addEventListener("focus", () => {
         if (input.value === "") {
             gsap.to(placeholder, {
-                y: -15,
-                opacity: 0,
-                duration: 0.2,
+                ...hideSettings,
                 onComplete: () => {
                     placeholder.innerText = "What are you looking for?";
-                    gsap.fromTo(
-                        placeholder,
-                        { y: 15, opacity: 0 },
-                        { y: 0, opacity: 1, duration: 0.3 },
-                    );
+                    gsap.fromTo(placeholder, showFromSettings, showToSettings);
                 },
             });
         }
@@ -149,16 +147,10 @@ function initSearchBar() {
     input.addEventListener("blur", () => {
         if (input.value === "") {
             gsap.to(placeholder, {
-                y: -15,
-                opacity: 0,
-                duration: 0.2,
+                ...hideSettings,
                 onComplete: () => {
                     placeholder.innerText = "Search";
-                    gsap.fromTo(
-                        placeholder,
-                        { y: 15, opacity: 0 },
-                        { y: 0, opacity: 1, duration: 0.3 },
-                    );
+                    gsap.fromTo(placeholder, showFromSettings, showToSettings);
                 },
             });
         }
