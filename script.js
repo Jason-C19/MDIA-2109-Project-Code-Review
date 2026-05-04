@@ -157,14 +157,15 @@ function initSearchBar() {
     });
 }
 
+// feat: add GSAP animation to notification bell on click and keyboard interaction
 function initNotificationBell() {
     const wrapper = document.querySelector(".bell-wrapper");
     const icon = document.querySelector(".bell-icon");
 
-    wrapper.addEventListener("click", () => {
+    const playBellAnimation = () => {
         gsap.set(icon, { transformOrigin: "top center" });
         gsap.to(icon, {
-            rotation: 10,
+            rotation: 15,
             yoyo: true,
             repeat: 3,
             duration: 0.1,
@@ -173,6 +174,14 @@ function initNotificationBell() {
                 gsap.to(icon, { rotation: 0, duration: 0.1 });
             },
         });
+    };
+
+    wrapper.addEventListener("click", playBellAnimation);
+    wrapper.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            playBellAnimation();
+        }
     });
 }
 
