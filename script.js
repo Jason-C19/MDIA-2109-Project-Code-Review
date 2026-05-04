@@ -5,6 +5,7 @@ const products = [
         distance: "2.8km away",
         recent: "2h ago",
         image: "images/little-oak.png",
+        alt: "Small wooden oak side table",
     },
     {
         title: "ZZ Plant",
@@ -12,6 +13,7 @@ const products = [
         distance: "1.2km away",
         recent: "1h ago",
         image: "images/zz-plant.png",
+        alt: "ZZ plant in a pot with glossy green leaves",
     },
     {
         title: "Coastline Sofa",
@@ -19,6 +21,7 @@ const products = [
         distance: "2km away",
         recent: "3d ago",
         image: "images/coastline-sofa.png",
+        alt: "Light-colored modern sofa with coastal-style design",
     },
     {
         title: "Timber Table",
@@ -26,6 +29,7 @@ const products = [
         distance: "5km away",
         recent: "4d ago",
         image: "images/timber-table.png",
+        alt: "Wooden dining table with a natural timber finish",
     },
     {
         title: "Oak Writing Desk",
@@ -33,6 +37,7 @@ const products = [
         distance: "5km away",
         recent: "2h ago",
         image: "images/oak-writing-desk.png",
+        alt: "Oak writing desk with a flat work surface and simple legs",
     },
     {
         title: "Round Dining Set",
@@ -40,6 +45,7 @@ const products = [
         distance: "6km away",
         recent: "5d ago",
         image: "images/round-dining-set.png",
+        alt: "Round dining table with matching chairs",
     },
     {
         title: "Tiny Plant",
@@ -47,6 +53,7 @@ const products = [
         distance: "1km away",
         recent: "5m ago",
         image: "images/tiny-plant.png",
+        alt: "Small potted plant with green leaves",
     },
     {
         title: "Natural Beech Chair",
@@ -54,6 +61,7 @@ const products = [
         distance: "5km away",
         recent: "4d ago",
         image: "images/natural-beech-chair.png",
+        alt: "Natural beech wood chair with a simple modern frame",
     },
 ];
 
@@ -63,13 +71,13 @@ function createProductCard(product) {
 
     card.innerHTML = `
         <div class="product-card__image-wrapper">
-            <img src="${product.image}" class="product-card__image" alt="${product.title}">
+            <img src="${product.image}" class="product-card__image" alt="${product.alt}">
             <div class="product-card__badge">${product.recent}</div>
         </div>
 
         <div class="product-card__info">
             <h3 class="product-card__title">${product.title}</h3>
-            <p class="product-card__price">$${product.price}</p>
+            <h4 class="product-card__price">$${product.price}</h4>
             <p class="product-card__distance">${product.distance}</p>
         </div>
     `;
