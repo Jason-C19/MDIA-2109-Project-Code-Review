@@ -25,11 +25,25 @@
                     <div class="search-wrapper">
                         <input
                             type="text"
-                            class="search-input" />
-                        <span class="search-placeholder">Search</span>
+                            id="searchInput"
+                            class="search-input"
+                            aria-label="Search for products" />
+                        <span
+                            class="search-placeholder"
+                            aria-hidden="true"
+                            >Search</span
+                        >
                     </div>
-                    <div class="bell-wrapper">
-                        <div class="bell-icon">🔔</div>
+                    <div
+                        class="bell-wrapper"
+                        role="button"
+                        tabindex="0"
+                        aria-label="Notifications">
+                        <div
+                            class="bell-icon"
+                            aria-hidden="true">
+                            🔔
+                        </div>
                     </div>
                 </div>
             </section>
