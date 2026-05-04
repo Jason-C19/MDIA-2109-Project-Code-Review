@@ -115,22 +115,10 @@ function createListingSection(titleText, productList) {
     return section;
 }
 
-// create search bar component with GSAP animations
-
-function createSearchBar() {
-    const wrapper = document.createElement("div");
-    wrapper.className = "search-wrapper";
-
-    const input = document.createElement("input");
-    input.type = "text";
-    input.className = "search-input";
-
-    const placeholder = document.createElement("span");
-    placeholder.className = "search-placeholder";
-    placeholder.innerText = "Search";
-
-    wrapper.appendChild(input);
-    wrapper.appendChild(placeholder);
+// refactor: target search input and bell icon directly in HTML
+function initSearchBar() {
+    const input = document.querySelector(".search-input");
+    const placeholder = document.querySelector(".search-placeholder");
 
     input.addEventListener("focus", () => {
         if (input.value === "") {
@@ -175,25 +163,14 @@ function createSearchBar() {
             });
         }
     });
-
-    return wrapper;
 }
 
-// create notification bell component with GSAP animation
-
-function createNotificationBell() {
-    const wrapper = document.createElement("div");
-    wrapper.className = "bell-wrapper";
-
-    const icon = document.createElement("div");
-    icon.className = "bell-icon";
-    icon.innerText = "🔔";
-
-    wrapper.appendChild(icon);
+function initNotificationBell() {
+    const wrapper = document.querySelector(".bell-wrapper");
+    const icon = document.querySelector(".bell-icon");
 
     wrapper.addEventListener("click", () => {
         gsap.set(icon, { transformOrigin: "top center" });
-
         gsap.to(icon, {
             rotation: 10,
             yoyo: true,
@@ -205,23 +182,16 @@ function createNotificationBell() {
             },
         });
     });
-
-    return wrapper;
 }
 
-// refactor: main render function to assemble the app components and render to the DOM
 function renderApp() {
     const container = document.querySelector(".container");
     if (!container) return;
 
-    const headerArea = document.createElement("div");
-    headerArea.className = "header-area";
-    headerArea.appendChild(createSearchBar());
-    headerArea.appendChild(createNotificationBell());
+    initSearchBar();
+    initNotificationBell();
 
     const listSection = createListingSection("Near me", products);
-
-    container.appendChild(headerArea);
     container.appendChild(listSection);
 }
 
