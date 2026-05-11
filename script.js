@@ -1,3 +1,6 @@
+// HTML handles product rendering now
+// Keeping products array and functions for future dynamic sections
+
 const products = [
     {
         title: "Little Oak",
@@ -105,6 +108,3 @@ function createListingSection(titleText, productList) {
 
     return section;
 }
-
-const container = document.querySelector(".container");
-container.appendChild(createListingSection("Near me", products));
