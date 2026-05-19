@@ -6,6 +6,7 @@ const products = [
     recent: "2h ago",
     image: "images/little-oak.png",
     alt: "Small wooden oak side table",
+    category: "bedroom",
   },
   {
     title: "ZZ Plant",
@@ -14,6 +15,7 @@ const products = [
     recent: "1h ago",
     image: "images/zz-plant.png",
     alt: "ZZ plant in a pot with glossy green leaves",
+    category: "plants",
   },
   {
     title: "Coastline Sofa",
@@ -22,6 +24,7 @@ const products = [
     recent: "3d ago",
     image: "images/coastline-sofa.png",
     alt: "Light-colored modern sofa with coastal-style design",
+    category: "bedroom",
   },
   {
     title: "Timber Table",
@@ -30,6 +33,7 @@ const products = [
     recent: "4d ago",
     image: "images/timber-table.png",
     alt: "Wooden dining table with a natural timber finish",
+    category: "dining",
   },
   {
     title: "Oak Writing Desk",
@@ -38,6 +42,7 @@ const products = [
     recent: "2h ago",
     image: "images/oak-writing-desk.png",
     alt: "Oak writing desk with a flat work surface and simple legs",
+    category: "bedroom",
   },
   {
     title: "Round Dining Set",
@@ -46,6 +51,7 @@ const products = [
     recent: "5d ago",
     image: "images/round-dining-set.png",
     alt: "Round dining table with matching chairs",
+    category: "dining",
   },
   {
     title: "Tiny Plant",
@@ -54,6 +60,7 @@ const products = [
     recent: "5m ago",
     image: "images/tiny-plant.png",
     alt: "Small potted plant with green leaves",
+    category: "plants",
   },
   {
     title: "Natural Beech Chair",
@@ -62,12 +69,14 @@ const products = [
     recent: "4d ago",
     image: "images/natural-beech-chair.png",
     alt: "Natural beech wood chair with a simple modern frame",
+    category: "dining",
   },
 ];
 
 function createProductCard(product) {
   const card = document.createElement("div");
   card.className = "product-card";
+  card.dataset.category = product.category;
 
   card.innerHTML = `
     <div class="product-card__image-wrapper">
@@ -106,9 +115,6 @@ function createListingSection(titleText, productList) {
   return section;
 }
 
-// Navigation
-const navButtons = document.querySelectorAll(".nav__button");
-
 function setActiveButton(buttons, activeButton, activeClass) {
   buttons.forEach(function (button) {
     button.classList.remove(activeClass);
@@ -117,15 +123,16 @@ function setActiveButton(buttons, activeButton, activeClass) {
   activeButton.classList.add(activeClass);
 }
 
+const navButtons = document.querySelectorAll(".nav__button");
+
 navButtons.forEach(function (button) {
   button.addEventListener("click", function () {
     setActiveButton(navButtons, button, "nav__button--active");
   });
 });
 
-// Category filtering
 const categoryButtons = document.querySelectorAll(".category-nav__button");
-const productSections = document.querySelectorAll(".products-section__content");
+const productCards = document.querySelectorAll(".product-card");
 
 categoryButtons.forEach(function (button) {
   button.addEventListener("click", function () {
@@ -133,11 +140,11 @@ categoryButtons.forEach(function (button) {
 
     const category = button.dataset.category;
 
-    productSections.forEach(function (section) {
-      section.classList.add("is-hidden");
-
-      if (section.classList.contains("products--" + category)) {
-        section.classList.remove("is-hidden");
+    productCards.forEach(function (card) {
+      if (category === "all" || card.dataset.category === category) {
+        card.classList.remove("is-hidden");
+      } else {
+        card.classList.add("is-hidden");
       }
     });
   });
