@@ -1,4 +1,5 @@
 :root {
+
   --font-primary: "lotus-eden", sans-serif;
   --font-secondary: "ofelia-display", sans-serif;
 
@@ -30,6 +31,7 @@
 *,
 *::before,
 *::after {
+
   box-sizing: border-box;
 }
 
@@ -136,6 +138,7 @@ body {
 
 .product-card__title,
 .product-card__price {
+
   font-family: var(--font-secondary);
   font-weight: var(--weight-medium);
   font-size: 1.5rem;
@@ -191,4 +194,5 @@ body {
     font-size: 0.9375rem;
     padding: 0.625rem 1rem;
   }
+
 }
